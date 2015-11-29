@@ -1,4 +1,25 @@
 Conzalt::Application.routes.draw do
+
+  # get for accounts
+  get "account/sign_up"
+  get "account/sign_in"
+  get "account/sign_out"
+  get "account/request_code"
+  get "account/validate_code"
+  get "account/forgot_password"
+  get "account/change_password"
+  get "account/update_password"
+  
+  # post for accounts
+  post "account/sign_up"
+  post "account/sign_in"
+  post "account/sign_out"
+  post "account/request_code"
+  post "account/validate_code"
+  post "account/forgot_password"
+  post "account/change_password"
+  post "account/update_password"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

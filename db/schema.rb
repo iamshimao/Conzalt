@@ -11,7 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128111956) do
+ActiveRecord::Schema.define(version: 20151129022903) do
+
+  create_table "codes", force: true do |t|
+    t.string   "uuid"
+    t.string   "device_id"
+    t.string   "code_text"
+    t.datetime "expiration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "devices", force: true do |t|
+    t.string   "device_id"
+    t.string   "uuid"
+    t.string   "platform"
+    t.string   "registration_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "permissions", force: true do |t|
+    t.integer  "number"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scopes", force: true do |t|
+    t.integer  "token_id"
+    t.integer  "permission_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tokens", force: true do |t|
+    t.string   "uuid"
+    t.string   "device_id"
+    t.string   "token_text"
+    t.string   "token_type"
+    t.datetime "expiration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "firstname"
